@@ -16,9 +16,13 @@ export class SearchViewComponent {
 
   protected tvShowsService = inject(TvShowsService);
   protected tvShowsData$?: Observable<TvShows>;
-  
+
   ngOnInit(): void {
     this.tvShowsData$ = this.tvShowsService.getTvShowsData();
+  }
+
+  handleSearch(searchInput: string): void {
+    this.tvShowsData$ = this.tvShowsService.getTvShowsSearchData(searchInput);
   }
 
 }
