@@ -1,1 +1,27 @@
-<p>favorites-card works!</p>
+<div class="favorites-card-wrapper" *ngIf="favoriteData as data">
+
+  <h1 class="favorites-card-header">
+    {{ data.tvShow.name }} 
+  </h1>
+
+  <a routerLink="/details/{{ data.tvShow.id }}">
+    <span class="icon-info"></span>
+  </a>
+  <span 
+    class="icon-bookmark" 
+    [class.highlight]="favoritesService.favorites().includes(data.tvShow.id)"
+    (click)="handleToggleFavorites(data.tvShow.id)"
+  ></span>
+  <span class="icon-link"></span>
+  
+  <img src="{{ data.tvShow.image_thumbnail_path }}" />
+
+  Next episode: 
+
+  <!-- <button 
+    class="favorites-card-back-button"
+    type="button" 
+    (click)="handleBack()"
+  ><< Back</button> -->
+  
+</div>

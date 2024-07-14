@@ -2,8 +2,8 @@
 
   <ng-container *ngIf="favoritesService.favoritesData() as favoritesData">
     <app-favorites-card 
-      *ngFor="let data of favoritesData"
-      [data]="data"
+      *ngFor="let favoriteData of favoritesData"
+      [favoriteData]="favoriteData"
     ></app-favorites-card>
   </ng-container>
   
