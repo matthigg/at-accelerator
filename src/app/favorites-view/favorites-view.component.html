@@ -1,1 +1,5 @@
-<p>favorites-view works!</p>
+<div wrapper="favorites-view-wrapper">
+
+  <app-favorites-card *ngFor="let showId of favoritesService.favorites()"></app-favorites-card>
+  
+</div>

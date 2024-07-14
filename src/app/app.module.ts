@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { FavoritesViewComponent } from './favorites-view/favorites-view.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FavoritesCardComponent } from "./favorites-card/favorites-card.component";
 
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule
-  ],
+    RouterModule,
+    FavoritesCardComponent
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
