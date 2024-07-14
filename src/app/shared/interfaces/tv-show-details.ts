@@ -2,6 +2,7 @@ export interface TvShowDetails {
   tvShow: TvShow;
   episodesCount: number;
   seasonsCount: number;
+  nextEpisode: Date;
 }
 
 export interface TvShow {

@@ -37,6 +37,11 @@ export class TvShowsService {
         const seasonsCount = seasonsCountSet.size;
         response.episodesCount = episodesCount;
         response.seasonsCount = seasonsCount;
+
+        const airDate = response.tvShow.episodes.at(-1)?.air_date
+        if (airDate && new Date(airDate).getTime() > Date.now()) {
+          response.nextEpisode = airDate;
+        }
       }),
     );
   }

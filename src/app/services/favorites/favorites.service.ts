@@ -8,12 +8,15 @@ import { TvShowsService } from '../tv-shows/tv-shows.service';
   providedIn: 'root'
 })
 export class FavoritesService {
+  // Local storage
   private storage = inject(StorageService<number[]>);
   private storageKey = 'at-favorite-shows';
   
+  // Favorites icon
   private favoritesSignal: WritableSignal<number[]> = signal(this.storage.getStorage(this.storageKey));
   favorites = this.favoritesSignal.asReadonly()
 
+  // Favorites card component data
   private tvShowsService = inject(TvShowsService);
   private favoritesArray: Observable<TvShowDetails>[] = [];
   private favoritesDataSignal: WritableSignal<TvShowDetails[] | null> = signal(null);
