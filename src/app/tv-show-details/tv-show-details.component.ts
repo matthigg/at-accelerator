@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './tv-show-details.component.html',
   styleUrl: './tv-show-details.component.css'
 })
-export class TvShowDetailsComponent {
+export default class TvShowDetailsComponent {
   @Input() tvShowDetailsData?: TvShowDetails;
 
   handleBack(): void {
