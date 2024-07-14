@@ -18,12 +18,12 @@
     <div class="tv-show-details-episodes">
       {{ data.episodesCount | i18nPlural: { 
         '=0': 'No episodes', 
-        '=1': 'episode',
+        '=1': '# episode',
         'other': '# episodes' 
       } }} - 
       {{ data.seasonsCount | i18nPlural: { 
         '=0': 'No seasons', 
-        '=1': 'season',
+        '=1': '# season',
         'other': '# seasons' 
       } }}
     </div>
