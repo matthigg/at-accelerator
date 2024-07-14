@@ -15,6 +15,9 @@
       font-weight: 600;
       margin: 1rem 0;
     }
+    .tv-show-details-episodes {
+      margin: 1rem 0;
+    }
   }
   .tv-show-details-right {
     grid-area: right;

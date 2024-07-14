@@ -2,7 +2,6 @@ import { inject, NgModule } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterModule, Routes } from '@angular/router';
 import { SearchViewComponent } from './search-view/search-view.component';
 import { FavoritesViewComponent } from "./favorites-view/favorites-view.component";
-import TvShowDetailsComponent from './tv-show-details/tv-show-details.component';
 // import { TvShowDetailsComponent } from './tv-show-details/tv-show-details.component';
 import { TvShowsService } from './services/tv-shows/tv-shows.service';
 import { TvShowDetails } from './shared/interfaces/tv-show-details';

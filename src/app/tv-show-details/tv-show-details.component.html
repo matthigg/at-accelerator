@@ -15,6 +15,18 @@
       Rating: {{ data.tvShow.rating | number: '1.0-2' }}/10 
       (rated by {{ data.tvShow.rating_count }} people)
     </div>
+    <div class="tv-show-details-episodes">
+      {{ data.episodesCount | i18nPlural: { 
+        '=0': 'No episodes', 
+        '=1': 'episode',
+        'other': '# episodes' 
+      } }} - 
+      {{ data.seasonsCount | i18nPlural: { 
+        '=0': 'No seasons', 
+        '=1': 'season',
+        'other': '# seasons' 
+      } }}
+    </div>
   </div>
 
   <div class="tv-show-details-right">

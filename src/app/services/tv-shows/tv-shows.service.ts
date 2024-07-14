@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { TvShowDetails } from 'src/app/shared/interfaces/tv-show-details';
 import { TvShows } from 'src/app/shared/interfaces/tv-shows';
 
@@ -27,6 +27,17 @@ export class TvShowsService {
   getTvShowDetailsData(showId: number): Observable<TvShowDetails> {
     return this.http.get<TvShowDetails>(
       `https://www.episodate.com/api/show-details?q=${showId}`
-    )
+    ).pipe(
+      tap(response => {
+        const episodesCount = response.tvShow.episodes.length;
+        const seasonsCountSet = new Set();
+        response.tvShow.episodes.forEach(episode => {
+          seasonsCountSet.add(episode.season)
+        });
+        const seasonsCount = seasonsCountSet.size;
+        response.episodesCount = episodesCount;
+        response.seasonsCount = seasonsCount;
+      }),
+    );
   }
 }
