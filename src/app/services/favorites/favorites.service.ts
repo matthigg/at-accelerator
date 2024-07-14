@@ -11,14 +11,11 @@ export class FavoritesService {
   constructor() { }
 
   toggleFavorite(showId: number): void {
-    const currentShowIds: number[] = this.storage.getStorage(this.storageKey);
-    let updatedShowIds: number[] = [];
-    if (currentShowIds.includes(showId)) {
-      updatedShowIds = currentShowIds.filter(id => id !== showId);
-    } else {
-      updatedShowIds.push(showId, ...currentShowIds);
-    }
-    this.storage.setStorage(this.storageKey, updatedShowIds);
+    let showIds: number[] = this.storage.getStorage(this.storageKey);
+    showIds.includes(showId)
+      ? showIds = showIds.filter(id => id !== showId)
+      : showIds.push(showId, ...showIds);
+    this.storage.setStorage(this.storageKey, showIds);
   }
 
   getFavorites(): number[] {
