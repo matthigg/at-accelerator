@@ -16,4 +16,10 @@ export class TvShowsService {
       'https://www.episodate.com/api/search'
     )
   }
+
+  getTvShowsSearchData(search: string): Observable<any> {
+    return this.http.get<any>(
+      `https://www.episodate.com/api/search?q=${search}&page=1`
+    )
+  }
 }
