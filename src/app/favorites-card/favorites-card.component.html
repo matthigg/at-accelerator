@@ -10,7 +10,7 @@
   <span 
     class="icon-bookmark" 
     [class.highlight]="favoritesService.favorites().includes(data.tvShow.id)"
-    (click)="handleToggleFavorites(data.tvShow.id)"
+    (click)="favoritesService.toggleFavorite(data.tvShow.id)"
   ></span>
   <span class="icon-link"></span>
   

@@ -29,6 +29,7 @@ export class FavoritesService {
       this.favorites().forEach((showId: number) => {
         this.favoritesArray.push(this.tvShowsService.getTvShowDetailsData(showId));
       });
+      // this.favoritesDataSignal.set(null);
       forkJoin(this.favoritesArray).pipe(take(1)).subscribe(response => {
         console.log('--- response:', response)
 
@@ -38,6 +39,8 @@ export class FavoritesService {
   }
 
   toggleFavorite(showId: number): void {
+    this.favoritesDataSignal.set(null);
+    
     if (this.favoritesSignal().includes(showId)) {
       // Option 1
       // this.favoritesSignal.set(this.favoritesSignal().filter(x => x !== showId));
