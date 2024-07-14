@@ -1,5 +1,10 @@
 <div wrapper="favorites-view-wrapper">
 
-  <app-favorites-card *ngFor="let showId of favoritesService.favorites()"></app-favorites-card>
+  <ng-container *ngIf="favoritesForkJoin$ | async as favoritesData">
+    <app-favorites-card 
+      *ngFor="let data of favoritesData"
+      [data]="data"
+    ></app-favorites-card>
+  </ng-container>
   
 </div>
