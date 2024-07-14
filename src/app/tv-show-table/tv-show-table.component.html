@@ -16,7 +16,11 @@
       <td data-label="Status">{{ show.status }}</td>
       <td data-label="Actions">
         <span class="icon-info"></span>
-        <span class="icon-bookmark"></span>
+        <span 
+          class="icon-bookmark" 
+          [class.highlight]="favoritesService.getFavorites().includes(show.id)"
+          (click)="handleToggleFavorites(show.id)"
+        ></span>
         <span class="icon-link"></span>
       </td>
     </tr>

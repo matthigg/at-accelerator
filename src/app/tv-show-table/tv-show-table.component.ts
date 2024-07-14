@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TvShows } from '../shared/interfaces/tv-shows';
 import { Observable } from 'rxjs';
+import { FavoritesService } from '../services/favorites/favorites.service';
 
 @Component({
   selector: 'app-tv-show-table',
@@ -12,5 +13,11 @@ import { Observable } from 'rxjs';
 })
 export class TvShowTableComponent {
   @Input() tvShowsData$?: Observable<TvShows> | null;
+
+  protected favoritesService = inject(FavoritesService);
+
+  handleToggleFavorites(id: number): void {
+    this.favoritesService.toggleFavorite(id);
+  }
 
 }

@@ -5,19 +5,23 @@ import { StorageService } from '../storage/storage.service';
   providedIn: 'root'
 })
 export class FavoritesService {
-  private storage = inject(StorageService<string[]>);
+  private storage = inject(StorageService<number[]>);
   private storageKey = 'at-favorite-shows';
 
   constructor() { }
 
-  toggleFavorite(showId: string): void {
-    const currentShowIds: string[] = this.storage.getStorage(this.storageKey);
-    let updatedShowIds: string[] = [];
+  toggleFavorite(showId: number): void {
+    const currentShowIds: number[] = this.storage.getStorage(this.storageKey);
+    let updatedShowIds: number[] = [];
     if (currentShowIds.includes(showId)) {
       updatedShowIds = currentShowIds.filter(id => id !== showId);
     } else {
       updatedShowIds.push(showId, ...currentShowIds);
     }
     this.storage.setStorage(this.storageKey, updatedShowIds);
+  }
+
+  getFavorites(): number[] {
+    return this.storage.getStorage(this.storageKey);
   }
 }
