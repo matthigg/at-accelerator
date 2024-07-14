@@ -26,7 +26,6 @@ export class SearchViewComponent {
     this.tvShowsData$ = null;
 
     setTimeout(() => {
-
       this.tvShowsData$ = this.tvShowsService.getTvShowsSearchData(searchInput);
     }, 2000)
   }

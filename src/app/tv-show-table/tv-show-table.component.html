@@ -12,7 +12,7 @@
     <tr *ngFor="let show of data.tv_shows">
       <td data-label="Name">{{ show.name }}</td>
       <td data-label="Country">{{ show.country }}</td>
-      <td data-label="Year started">{{ show.start_date }}</td>
+      <td data-label="Year started">{{ show.start_date | date: 'yyyy' }}</td>
       <td data-label="Status">{{ show.status }}</td>
       <td data-label="Actions">
         <span class="icon-info"></span>
