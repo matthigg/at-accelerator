@@ -19,8 +19,4 @@ export class FavoritesCardComponent implements OnInit {
   ngOnInit(): void {
     console.log('--- this.favoriteData:', this.favoriteData)
   }
-
-  handleToggleFavorites(showId: number): void {
-    
-  }
 }

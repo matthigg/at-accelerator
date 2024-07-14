@@ -29,10 +29,7 @@ export class FavoritesService {
       this.favorites().forEach((showId: number) => {
         this.favoritesArray.push(this.tvShowsService.getTvShowDetailsData(showId));
       });
-      // this.favoritesDataSignal.set(null);
       forkJoin(this.favoritesArray).pipe(take(1)).subscribe(response => {
-        console.log('--- response:', response)
-
         this.favoritesDataSignal.set(response);
       })
     });
