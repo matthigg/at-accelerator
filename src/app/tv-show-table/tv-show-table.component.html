@@ -15,7 +15,9 @@
       <td data-label="Year started">{{ show.start_date | date: 'yyyy' }}</td>
       <td data-label="Status">{{ show.status }}</td>
       <td data-label="Actions">
-        <span class="icon-info"></span>
+        <a routerLink="details/{{ show.id }}">
+          <span class="icon-info"></span>
+        </a>
         <span 
           class="icon-bookmark" 
           [class.highlight]="favoritesService.favorites().includes(show.id)"

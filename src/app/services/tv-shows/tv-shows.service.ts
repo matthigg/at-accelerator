@@ -17,9 +17,15 @@ export class TvShowsService {
     )
   }
 
-  getTvShowsSearchData(search: string): Observable<any> {
-    return this.http.get<any>(
+  getTvShowsSearchData(search: string): Observable<TvShows> {
+    return this.http.get<TvShows>(
       `https://www.episodate.com/api/search?q=${search}&page=1`
+    )
+  }
+
+  getTvShowDetailsData(showId: number): Observable<any> {
+    return this.http.get<any>(
+      `https://www.episodate.com/api/show-details?q=${showId}`
     )
   }
 }
