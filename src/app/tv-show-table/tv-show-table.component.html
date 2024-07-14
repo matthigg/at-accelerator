@@ -1,4 +1,4 @@
-<table *ngIf="tvShowsData$ | async as data">
+<table *ngIf="tvShowsData$ | async as data; else loadingSpinner">
   <thead>
     <tr>
       <th>Name</th>
@@ -22,3 +22,7 @@
     </tr>
   </tbody>
 </table>
+
+<ng-template #loadingSpinner>
+  <div class="spinner"></div>
+</ng-template>
