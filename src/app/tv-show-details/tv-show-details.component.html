@@ -1,3 +1,20 @@
-<p>tv-show-details works!</p>
+<div class="tv-show-details-wrapper" *ngIf="tvShowDetailsData as data">
 
-{{ showId }}
+  <h1 class="tv-show-details-header">
+    {{ data.tvShow.name }} 
+    - {{ data.tvShow.country }} 
+    - {{ data.tvShow.start_date | date: 'yyyy' }}
+    <ng-container *ngIf="data.tvShow.end_date">
+      - {{ data.tvShow.end_date | date: 'yyyy' }}
+    </ng-container>
+    <hr />
+  </h1>
+  <div class="tv-show-details-left">
+    <img src="{{ data.tvShow.image_thumbnail_path }}" />
+  </div>
+
+  <div class="tv-show-details-right">
+    {{ data.tvShow.description }}
+  </div>
+  
+</div>

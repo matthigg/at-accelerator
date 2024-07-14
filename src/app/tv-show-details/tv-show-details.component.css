@@ -1,0 +1,17 @@
+.tv-show-details-wrapper {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "left right";
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+  .tv-show-details-header {
+    grid-area: header;
+  }
+  .tv-show-details-left {
+    grid-area: left;
+  }
+  .tv-show-details-right {
+    grid-area: right;
+  }
+}

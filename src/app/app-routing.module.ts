@@ -8,6 +8,7 @@ import { TvShowDetails } from './shared/interfaces/tv-show-details';
 import { Observable } from 'rxjs';
 
 function tvShowDetailsResolver(route: ActivatedRouteSnapshot): Observable<TvShowDetails> {
+  let x = route.params['showId']
   const showId = +route.params['showId'];
   return inject(TvShowsService).getTvShowDetailsData(showId);
 }
