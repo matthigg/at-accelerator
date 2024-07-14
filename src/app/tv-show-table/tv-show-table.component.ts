@@ -11,6 +11,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./tv-show-table.component.css']
 })
 export class TvShowTableComponent {
-  @Input() tvShowsData$?: Observable<TvShows>;
+  @Input() tvShowsData$?: Observable<TvShows> | null;
 
 }

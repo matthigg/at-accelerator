@@ -1,12 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <form onsubmit="return false">
+      <!-- <form onsubmit="return false"> -->
+      <form>
         <fieldset>
           <legend>TV Show Search</legend>
           <label for="name">Name</label>
           <input #searchInput type="text" id="name" placeholder="Name of the show"/>
-          <button class="primary" (click)="handleSearch(searchInput.value)">Search</button>
+          <button class="primary" (click)="handleSearch(searchInput.value, $event)">Search</button>
         </fieldset>
       </form>
     </div>
