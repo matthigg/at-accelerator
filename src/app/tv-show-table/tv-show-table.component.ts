@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TvShows } from '../shared/interfaces/tv-shows';
 import { Observable } from 'rxjs';
 import { FavoritesService } from '../services/favorites/favorites.service';
-import { TvShowsService } from '../services/tv-shows/tv-shows.service';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -17,11 +16,6 @@ export class TvShowTableComponent {
   @Input() tvShowsData$?: Observable<TvShows> | null;
 
   protected favoritesService = inject(FavoritesService);
-  // private tvShowService = inject(TvShowsService);
-
-  // handleShowDetails(id: number): void {
-  //   this.tvShowService.getTvShowDetailsData(id);
-  // }
   
   handleToggleFavorites(id: number): void {
     this.favoritesService.toggleFavorite(id);

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { TvShowDetails } from 'src/app/shared/interfaces/tv-show-details';
 import { TvShows } from 'src/app/shared/interfaces/tv-shows';
 
 @Injectable({
@@ -23,8 +24,8 @@ export class TvShowsService {
     )
   }
 
-  getTvShowDetailsData(showId: number): Observable<any> {
-    return this.http.get<any>(
+  getTvShowDetailsData(showId: number): Observable<TvShowDetails> {
+    return this.http.get<TvShowDetails>(
       `https://www.episodate.com/api/show-details?q=${showId}`
     )
   }
