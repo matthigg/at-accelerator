@@ -12,7 +12,6 @@ export class FavoritesService {
 
   constructor() {
     effect(() => {
-      console.log('--- effect ---')
       this.storage.setStorage(this.storageKey, this.favoritesSignal())
   });
   }

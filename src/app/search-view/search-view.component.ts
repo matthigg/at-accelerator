@@ -24,10 +24,7 @@ export class SearchViewComponent {
   handleSearch(searchInput: string, event: Event): void {
     event?.preventDefault();
     this.tvShowsData$ = null;
-
-    setTimeout(() => {
-      this.tvShowsData$ = this.tvShowsService.getTvShowsSearchData(searchInput);
-    }, 2000)
+    this.tvShowsData$ = this.tvShowsService.getTvShowsSearchData(searchInput);
   }
 
 }
