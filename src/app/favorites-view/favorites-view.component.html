@@ -1,6 +1,6 @@
 <div wrapper="favorites-view-wrapper">
 
-  <ng-container *ngIf="favoritesForkJoin$ | async as favoritesData">
+  <ng-container *ngIf="favoritesService.favoritesData() as favoritesData">
     <app-favorites-card 
       *ngFor="let data of favoritesData"
       [data]="data"
