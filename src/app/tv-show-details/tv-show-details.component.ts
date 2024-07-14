@@ -19,4 +19,8 @@ export class TvShowDetailsComponent {
 
   }
 
+  handleBack(): void {
+    history.back();
+  }
+
 }

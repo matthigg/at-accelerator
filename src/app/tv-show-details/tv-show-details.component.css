@@ -2,7 +2,8 @@
   display: grid;
   grid-template-areas: 
     "header header"
-    "left right";
+    "left right"
+    "button .";
   grid-template-columns: 1fr 1fr;
   padding: 2rem;
   .tv-show-details-header {
@@ -13,5 +14,11 @@
   }
   .tv-show-details-right {
     grid-area: right;
+  }
+  .tv-show-details-back-button {
+    background-color: cornflowerblue;
+    color: white;
+    grid-area: button;
+    width: 6rem;
   }
 }
