@@ -18,7 +18,7 @@
         <span class="icon-info"></span>
         <span 
           class="icon-bookmark" 
-          [class.highlight]="favoritesService.getFavorites().includes(show.id)"
+          [class.highlight]="favoritesService.favorites().includes(show.id)"
           (click)="handleToggleFavorites(show.id)"
         ></span>
         <span class="icon-link"></span>
