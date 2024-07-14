@@ -11,6 +11,10 @@
   }
   .tv-show-details-left {
     grid-area: left;
+    .tv-show-details-rating {
+      font-weight: 600;
+      margin: 1rem 0;
+    }
   }
   .tv-show-details-right {
     grid-area: right;
@@ -19,6 +23,7 @@
     background-color: cornflowerblue;
     color: white;
     grid-area: button;
+    margin-left: -0.5rem;
     width: 6rem;
   }
 }

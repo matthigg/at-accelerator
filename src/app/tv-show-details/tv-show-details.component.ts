@@ -10,14 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tv-show-details.component.css'
 })
 export class TvShowDetailsComponent {
-  @Input() showId!: number;
   @Input() tvShowDetailsData?: TvShowDetails;
-
-  ngOnInit(): void {
-    let x = this.tvShowDetailsData
-    console.log('--- x:', x)
-
-  }
 
   handleBack(): void {
     history.back();
