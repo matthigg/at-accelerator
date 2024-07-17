@@ -33,6 +33,13 @@ export class FavoritesService {
         this.favoritesArray.push(this.tvShowsService.getTvShowDetailsData(showId));
       });
       forkJoin(this.favoritesArray).pipe(take(1)).subscribe(response => {
+        
+        response.sort((a, b) => {
+          const x = new Date(a.nextEpisode).getTime() || 0;
+          const y = new Date(b.nextEpisode).getTime() || 0;
+          return y - x;
+        });
+        
         this.favoritesDataSignal.set(response);
       })
     });

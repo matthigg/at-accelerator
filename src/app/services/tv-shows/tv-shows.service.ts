@@ -38,8 +38,6 @@ export class TvShowsService {
         response.episodesCount = episodesCount;
         response.seasonsCount = seasonsCount;
 
-        console.log('--- response.seasonsCount:', response.seasonsCount)
-
         const airDate = response.tvShow.episodes.at(-1)?.air_date
         if (airDate && new Date(airDate).getTime() > Date.now()) {
           response.nextEpisode = airDate;
