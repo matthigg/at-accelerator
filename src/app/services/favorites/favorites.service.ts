@@ -37,7 +37,10 @@ export class FavoritesService {
         response.sort((a, b) => {
           const x = new Date(a.nextEpisode).getTime() || 0;
           const y = new Date(b.nextEpisode).getTime() || 0;
-          return y - x;
+          if (x === 0 && y === 0) return 0;
+          if (x === 0) return 1;
+          if (y === 0) return -1;
+          return x - y;
         });
         
         this.favoritesDataSignal.set(response);

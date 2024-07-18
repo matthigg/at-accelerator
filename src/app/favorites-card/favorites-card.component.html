@@ -16,7 +16,10 @@
   
   <img src="{{ data.tvShow.image_thumbnail_path }}" />
 
-  Next episode: {{ data.nextEpisode | date: 'MMM d, y' }}
+  {{ data.nextEpisode | json }}
+
+  <!-- Next episode: {{ data.nextEpisode | date: 'MMM d, y' }} -->
+  Next episode: {{ data | countdown }}
 
 
 </div>

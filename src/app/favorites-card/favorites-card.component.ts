@@ -3,11 +3,12 @@ import { TvShowDetails } from '../shared/interfaces/tv-show-details';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FavoritesService } from '../services/favorites/favorites.service';
+import { CountdownPipe } from '../shared/pipes/countdown.pipe';
 
 @Component({
   selector: 'app-favorites-card',
   standalone: true,
-  imports: [ CommonModule, RouterModule ],
+  imports: [ CommonModule, CountdownPipe, RouterModule ],
   templateUrl: './favorites-card.component.html',
   styleUrl: './favorites-card.component.css'
 })
