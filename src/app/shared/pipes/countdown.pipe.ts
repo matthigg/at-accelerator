@@ -11,7 +11,7 @@ export class CountdownPipe implements PipeTransform {
     if (value.nextEpisode) {
       const dayInMs = 1000 * 60 * 60 * 24; 
       const timeRemaining = (new Date(value.nextEpisode).getTime() - new Date().getTime());
-      const daysRemaining = Math.ceil(timeRemaining / dayInMs);
+      const daysRemaining = Math.floor(timeRemaining / dayInMs);
       let returnValue: string;
       daysRemaining === 1
         ? returnValue = `in ${daysRemaining} day`

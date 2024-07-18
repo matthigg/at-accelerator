@@ -18,10 +18,15 @@
         <a routerLink="details/{{ show.id }}">
           <span class="icon-info"></span>
         </a>
-        <span 
+        <!-- <span 
           class="icon-bookmark" 
           [class.highlight]="favoritesService.favorites().includes(show.id)"
           (click)="favoritesService.toggleFavorite(show.id)"
+        ></span> -->
+        <span 
+          class="icon-bookmark" 
+          [class.highlight]="favoritesService.favorites().includes(show.id)"
+          appFavoritesToggleImage
         ></span>
         <span class="icon-link"></span>
       </td>
