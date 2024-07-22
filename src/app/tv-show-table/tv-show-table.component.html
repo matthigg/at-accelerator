@@ -23,9 +23,10 @@
           [class.highlight]="favoritesService.favorites().includes(show.id)"
           (click)="favoritesService.toggleFavorite(show.id)"
         ></span> -->
+        {{ show.id }}
         <span 
-          class="icon-bookmark" 
-          [class.highlight]="favoritesService.favorites().includes(show.id)"
+          class="icon-bookmark"
+          [showId]="show.id"
           appFavoritesToggleImage
         ></span>
         <span class="icon-link"></span>
